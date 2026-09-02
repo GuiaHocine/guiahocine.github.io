@@ -1,56 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Hocine Islam</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta
+        name="description"
+        content="Hocine Islam — AI Engineer and researcher interested in reinforcement learning, ML systems and scientific AI."
+    >
+
+    <link rel="stylesheet" href="styl.css">
 </head>
 
 <body>
 
-    <main>
+    <div class="container">
 
-        <header>
-            <h1>Hocine Islam</h1>
+        <!-- Header -->
+        <header class="header">
 
-            <p>
-                AI Engineer interested in reinforcement learning,
-                ML systems and scientific AI.
+            <div class="header-top">
+                <h1>Hocine Islam</h1>
+
+                <nav>
+                    <a href="#research">Research</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#writing">Writing</a>
+                    <a href="#about">About</a>
+                </nav>
+            </div>
+
+            <p class="subtitle">
+                AI Engineer & Researcher
             </p>
 
-            <nav>
-                <a href="#research">Research</a>
-                <a href="#projects">Projects</a>
-                <a href="#writing">Writing</a>
-                <a href="#about">About</a>
-            </nav>
         </header>
 
-        <section id="about">
-            <h2>About</h2>
+
+        <!-- Intro -->
+        <main>
+
+            <section class="intro">
+
+                <p>
+                    I am an AI engineer interested in
+                    <a href="#research">reinforcement learning</a>,
+                    machine learning systems, and AI for scientific discovery.
+                </p>
+
+                <p>
+                    I am currently completing a Master's degree in Artificial
+                    Intelligence at Sorbonne Université.
+                </p>
+
+                <div class="links">
+                    <a href="https://github.com/guiahocine" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">Google Scholar</a>
+                    <a href="assets/cv.pdf" target="_blank">CV</a>
+                    <a href="mailto:your@email.com">Email</a>
+                </div>
+
+            </section>
+
+
+            <!-- Research -->
+            <section id="research">
+
+                <h2>Research</h2>
+
+                <div class="research-item">
+
+                    <div class="item-header">
+                        <h3>Reinforcement Learning</h3>
+                    </div>
+
+                    <p>
+                        Reinforcement learning, RL environments, RLVR,
+                        long-horizon learning and decision making.
+                    </p>
+
+                </div>
+
+
+                <div class="research-item">
+
+                    <div class="item-header">
+                        <h3>ML Systems</h3>
+                    </div>
+
+                    <p>
+                        Efficient training and inference, distributed
+                        learning, GPU kernels, compilers and ML infrastructure.
+                    </p>
+
+                </div>
+
+
+                <div class="research-item">
+
+                    <div class="item-header">
+                        <h3>AI for Science</h3>
+                    </div>
+
+                    <p>
+                        Learning and reasoning systems for scientific and
+                        physical problems.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Projects -->
+            <section id="projects">
+
+                <h2>Projects</h2>
+
+
+                <article class="project">
+
+                    <div class="project-title">
+                        <a href="#">
+                            RLVR × CUDA Kernel Optimization
+                        </a>
+
+                        <span>2026</span>
+                    </div>
+
+                    <p>
+                        Training coding agents with reinforcement learning
+                        and verifiable rewards to generate optimized CUDA
+                        kernels.
+                    </p>
+
+                    <div class="tags">
+                        RLVR · CUDA · PyTorch · ML Systems
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-title">
+                        <a href="#">
+                            Distributed Training Simulator
+                        </a>
+
+                        <span>2026</span>
+                    </div>
+
+                    <p>
+                        Simulation and benchmarking of distributed training
+                        strategies including data, tensor and fully-sharded
+                        parallelism.
+                    </p>
+
+                    <div class="tags">
+                        Distributed Systems · PyTorch · HPC
+                    </div>
+
+                </article>
+
+
+                <article class="project">
+
+                    <div class="project-title">
+                        <a href="#">
+                            Dynamic Graph Recommendation
+                        </a>
+
+                        <span>2025</span>
+                    </div>
+
+                    <p>
+                        Temporal graph neural networks for point-of-interest
+                        recommendation using dynamic user and location graphs.
+                    </p>
+
+                    <div class="tags">
+                        GNN · Temporal Graphs · Recommendation
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Experience -->
+            <section id="experience">
+
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+
+                    <div class="item-header">
+                        <h3>Free</h3>
+                        <span>2026</span>
+                    </div>
+
+                    <p class="role">
+                        AI Engineer
+                    </p>
+
+                    <p>
+                        Fine-tuning and evaluation of language models,
+                        classification systems, guardrails and deployment
+                        of AI applications.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Writing -->
+            <section id="writing">
+
+                <h2>Writing</h2>
+
+                <article class="writing-item">
+
+                    <div>
+                        <a href="#">
+                            Understanding Reinforcement Learning Environments
+                        </a>
+                    </div>
+
+                    <span>2026</span>
+
+                </article>
+
+
+                <article class="writing-item">
+
+                    <div>
+                        <a href="#">
+                            RLVR and the Future of Coding Agents
+                        </a>
+                    </div>
+
+                    <span>2026</span>
+
+                </article>
+
+
+                <article class="writing-item">
+
+                    <div>
+                        <a href="#">
+                            Why ML Systems Matter for AI Research
+                        </a>
+                    </div>
+
+                    <span>2026</span>
+
+                </article>
+
+            </section>
+
+
+            <!-- Education -->
+            <section id="education">
+
+                <h2>Education</h2>
+
+                <div class="education-item">
+
+                    <div class="item-header">
+                        <h3>Sorbonne Université</h3>
+                        <span>2025–2026</span>
+                    </div>
+
+                    <p>
+                        Master 2 — Artificial Intelligence
+                    </p>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <div class="item-header">
+                        <h3>École Nationale Polytechnique d'Alger</h3>
+                        <span>2020–2025</span>
+                    </div>
+
+                    <p>
+                        Engineering degree — Data Science & Artificial Intelligence
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- About -->
+            <section id="about">
+
+                <h2>About</h2>
+
+                <p>
+                    Outside of research and engineering, I enjoy learning
+                    about science, building things, and exploring difficult
+                    technical problems.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+
             <p>
-                I'm an AI engineer interested in...
+                © 2026 Hocine Islam
             </p>
-        </section>
 
-        <section id="research">
-            <h2>Research</h2>
-            <!-- papers / research interests -->
-        </section>
+        </footer>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <!-- projects -->
-        </section>
-
-        <section id="writing">
-            <h2>Writing</h2>
-            <!-- articles -->
-        </section>
-
-    </main>
+    </div>
 
 </body>
 </html>
