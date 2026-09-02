@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+    ==========================================================================
+    POST TEMPLATE
+    ==========================================================================
+    How to use:
+      1. Copy this file to posts/<your-slug>.html  (e.g. posts/my-post.html)
+      2. Update <title>, the .post-title, .post-date, and the content below
+      3. Add an entry in posts.js pointing to your new file
+      4. Open it in the browser / push — it's live and listed on writing.html
+
+    Supported content elements (styled in style.css under "Article"):
+      - <h3> section headings
+      - <p> paragraphs
+      - <pre><code> ... </code></pre>  code blocks
+      - <code> inline code
+      - <blockquote> quotes
+      - <figure><img> ... <figcaption> ... </figcaption></figure>
+      - <ul>/<ol> lists
+      - footnotes via <sup> and the .footnotes section
+    ==========================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Hoc - Post Title</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Guia Hocine</h1>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../writing.html">Writing</a>
+    </nav>
+</header>
+
+<main>
+    <article class="post">
+        <h2 class="post-title">Post Title</h2>
+        <p class="post-date">2026-09-01</p>
+
+        <div class="post-content">
+            <!-- Write your post below this line -->
+
+            <p>
+                This is an opening paragraph. Introduce your topic here and
+                give the reader a reason to keep reading.
+            </p>
+
+            <h3>A Section Heading</h3>
+
+            <p>
+                Write your content here. You can use <strong>bold</strong> and
+                <em>italic</em> text, as well as <code>inline code</code> for
+                short snippets.
+            </p>
+
+            <p>
+                You can reference footnotes like this<sup><a href="#fn1">1</a></sup>
+                and define them at the bottom of the post.
+            </p>
+
+            <pre><code># A code block — great for examples
+import torch
+
+x = torch.randn(64, 128)
+y = x @ x.T
+print(y.shape)</code></pre>
+
+            <blockquote>
+                This is a blockquote. Use it for quoting other people or
+                highlighting an important idea.
+            </blockquote>
+
+            <figure>
+                <img src="https://via.placeholder.com/600x300" alt="A diagram">
+                <figcaption>A caption describing the image above.</figcaption>
+            </figure>
+
+            <ul>
+                <li>First point</li>
+                <li>Second point</li>
+                <li>Third point</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+
+            <p>
+                Wrap up your thoughts here. Thanks for reading!
+            </p>
+
+            <!-- Footnotes -->
+            <section class="footnotes">
+                <hr>
+                <ol>
+                    <li id="fn1">This is the text of the first footnote.</li>
+                </ol>
+            </section>
+        </div>
+    </article>
+</main>
+
+</body>
+</html>

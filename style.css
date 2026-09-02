@@ -1,359 +1,206 @@
-/* ------------------------------
-   Base
------------------------------- */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    margin: 0;
-    background: #ffffff;
-    color: #1a1a1a;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
-        Arial,
-        sans-serif;
-
-    font-size: 15px;
-    line-height: 1.65;
-
-    -webkit-font-smoothing: antialiased;
-}
-
-
-/* ------------------------------
-   Layout
------------------------------- */
-
-.container {
-    width: min(720px, calc(100% - 40px));
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
-
-/* ------------------------------
-   Header
------------------------------- */
-
-.header {
-    padding-top: 55px;
-    padding-bottom: 70px;
-}
-
-.header-top {
+header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    gap: 30px;
+    align-items: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
 }
 
-h1 {
+header h1 {
     margin: 0;
-
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-}
-
-.subtitle {
-    margin: 5px 0 0;
-
-    color: #666;
-    font-size: 14px;
-}
-
-
-/* ------------------------------
-   Navigation
------------------------------- */
-
-nav {
-    display: flex;
-    gap: 18px;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 nav a {
-    color: #666;
-    font-size: 14px;
+    margin-left: 1.5rem;
     text-decoration: none;
+    color: #555;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #000;
-}
-
-
-/* ------------------------------
-   Links
------------------------------- */
-
-a {
-    color: #111;
+    color: #0056b3;
     text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-}
-
-a:hover {
-    color: #666;
-}
-
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-
-    margin-top: 25px;
-}
-
-.links a {
-    font-size: 14px;
-}
-
-
-/* ------------------------------
-   Intro
------------------------------- */
-
-.intro {
-    max-width: 650px;
-
-    padding-bottom: 65px;
-
-    font-size: 16px;
-}
-
-.intro p {
-    margin: 0 0 18px;
-}
-
-
-/* ------------------------------
-   Sections
------------------------------- */
-
-section {
-    padding: 55px 0;
-
-    border-top: 1px solid #e8e8e8;
 }
 
 h2 {
-    margin: 0 0 32px;
-
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.01em;
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
 
-
-/* ------------------------------
-   Research
------------------------------- */
-
-.research-item {
-    margin-bottom: 30px;
+a {
+    color: #0056b3;
+    text-decoration: none;
 }
 
-.research-item:last-child {
-    margin-bottom: 0;
+a:hover {
+    text-decoration: underline;
 }
 
-.research-item h3 {
-    margin: 0 0 5px;
-
-    font-size: 15px;
-    font-weight: 500;
+.links {
+    margin: 1.5rem 0;
+    font-family: monospace;
+    font-size: 1.1rem;
 }
 
-.research-item p {
-    margin: 0;
-
-    color: #666;
+ul {
+    padding-left: 1.5rem;
 }
 
-
-/* ------------------------------
-   Projects
------------------------------- */
-
-.project {
-    margin-bottom: 38px;
+li {
+    margin-bottom: 0.8rem;
 }
 
-.project:last-child {
-    margin-bottom: 0;
+/* Writing list — entries with date, title, and bracketed reference links */
+.writing-list {
+    list-style: none;
+    padding-left: 0;
 }
 
-.project-title {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+.writing-list li {
+    margin-bottom: 1rem;
+    line-height: 1.8;
 }
 
-.project-title a {
-    font-weight: 500;
-}
-
-.project-title span {
-    flex-shrink: 0;
-
+.writing-list .date {
+    display: inline-block;
+    width: 7rem;
+    font-family: monospace;
     color: #888;
-    font-size: 13px;
+    margin-right: 0.5rem;
 }
-
-.project p {
-    margin: 8px 0;
-
-    color: #555;
-}
-
-.tags {
-    color: #999;
-    font-size: 12px;
-}
-
-
-/* ------------------------------
-   Experience
------------------------------- */
-
-.experience-item {
-    margin-bottom: 30px;
-}
-
-.item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 20px;
-}
-
-.item-header h3 {
-    margin: 0;
-
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.item-header span {
-    color: #888;
-    font-size: 13px;
-}
-
-.role {
-    margin: 3px 0 8px;
-
-    color: #555;
-    font-size: 14px;
-}
-
-.experience-item > p:last-child {
-    margin: 0;
-
-    color: #666;
-}
-
-
-/* ------------------------------
-   Writing
------------------------------- */
-
-.writing-item {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-
-    margin-bottom: 18px;
-}
-
-.writing-item span {
-    flex-shrink: 0;
-
-    color: #888;
-    font-size: 13px;
-}
-
-
-/* ------------------------------
-   Education
------------------------------- */
-
-.education-item {
-    margin-bottom: 30px;
-}
-
-.education-item:last-child {
-    margin-bottom: 0;
-}
-
-.education-item p {
-    margin: 4px 0 0;
-
-    color: #666;
-}
-
-
-/* ------------------------------
-   Footer
------------------------------- */
-
-footer {
-    padding: 45px 0 60px;
-
-    border-top: 1px solid #e8e8e8;
-
-    color: #999;
-    font-size: 12px;
-}
-
-
-/* ------------------------------
-   Mobile
------------------------------- */
 
 @media (max-width: 600px) {
-
-    .container {
-        width: min(100% - 32px, 720px);
-    }
-
-    .header {
-        padding-top: 35px;
-        padding-bottom: 50px;
-    }
-
-    .header-top {
-        display: block;
-    }
-
-    nav {
-        margin-top: 18px;
-        gap: 15px;
-    }
-
-    section {
-        padding: 45px 0;
-    }
-
-    .project-title,
-    .item-header,
-    .writing-item {
+    header {
+        flex-direction: column;
         align-items: flex-start;
     }
 
-    .project-title span,
-    .item-header span,
-    .writing-item span {
-        font-size: 12px;
+    nav {
+        margin-top: 1rem;
     }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   Article / single post
+   ========================================================================== */
+.post-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.post-date {
+    color: #888;
+    font-family: monospace;
+    font-size: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.post-content h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1rem;
+}
+
+/* Code blocks */
+.post-content pre {
+    background: #f5f5f5;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* Inline code */
+.post-content code {
+    background: #f5f5f5;
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+    border-left: 4px solid #ddd;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    color: #555;
+    background: #fafafa;
+}
+
+/* Figures (images + captions) */
+.post-content figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.post-content figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* Footnotes */
+.post-content .footnotes {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.post-content .footnotes hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+
+.post-content .footnotes ol {
+    padding-left: 1.5rem;
+}
+
+/* Helper */
+.muted {
+    color: #888;
 }

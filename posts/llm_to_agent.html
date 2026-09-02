@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+    ==========================================================================
+    POST TEMPLATE
+    ==========================================================================
+    How to use:
+      1. Copy this file to posts/<your-slug>.html  (e.g. posts/my-post.html)
+      2. Update <title>, the .post-title, .post-date, and the content below
+      3. Add an entry in posts.js pointing to your new file
+      4. Open it in the browser / push — it's live and listed on writing.html
+
+    Supported content elements (styled in style.css under "Article"):
+      - <h3> section headings
+      - <p> paragraphs
+      - <pre><code> ... </code></pre>  code blocks
+      - <code> inline code
+      - <blockquote> quotes
+      - <figure><img> ... <figcaption> ... </figcaption></figure>
+      - <ul>/<ol> lists
+      - footnotes via <sup> and the .footnotes section
+    ==========================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Hoc - Post Title</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Guia Hocine</h1>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../writing.html">Writing</a>
+    </nav>
+</header>
+
+<main>
+    <article class="post">
+        <h2 class="post-title"> From 'Dumb' next token prediction to 'planning' and solving tasks</h2>
+        <p class="post-date">2026-09-01</p>
+
+        <div class="post-content">
+            <!-- Write your post below this line -->
+
+            <p>
+                Hey. In this article, I'll be talking about how we went from a tool that only knows how
+                to predict the next word to a tool that has the power to <em>plan</em> and solve complex
+                tasks. I should emphasize that this is not an "article" as you might read elsewhere on
+                the internet, but rather my own perspective on how engineers managed to turn a
+                "next-token prediction tool" into a "task-solver tool".
+            </p>
+
+
+
+
+
+            <figure>
+                <img src="../images/llm_abstractions.svg" alt="Three stages in the evolution from a next-token predictor to a task-solving agent" style="max-width:100%;height:auto;border-radius:4px;background:#fafafa;">
+                <figcaption>
+                    The three stages of turning an LLM into a task-solving tool: manual tool wiring
+                    (1:1), the MCP server abstraction (1:N), and the autonomous agent planning loop.
+                </figcaption>
+            </figure>
+
+            <p>
+                The image above represents three stages in the evolution of turning an LLM into a tool
+                capable of doing tasks beyond text generation.
+            </p>
+
+            <p>
+                The first rectangle shows how we turned a next-token prediction tool into a tool
+                capable of using other tools &mdash; meaning it no longer relies solely on the internal
+                capacities encoded in its weights, but can also call external tools (a database, a
+                calculator, a weather API, etc.). It's like giving "hands" to a highly cultivated
+                person who was born handicapped. We achieve this by wrapping the LLM in what we call a
+                <em>harness</em>: tools are presented to the LLM manually in the system prompt, and it's
+                up to the LLM to decide whether to use one. The LLM produces a JSON, that JSON is
+                parsed and validated by the harness, and then an API call to the tool is made &mdash;
+                that's the generic workflow.
+            </p>
+
+            <p><strong>Pros</strong></p>
+            <ul>
+                <li>Giving "hands" (more capabilities) and "glasses" (more knowledge) to LLMs.</li>
+                <li>Reduced hallucination.</li>
+            </ul>
+
+            <p><strong>Cons</strong></p>
+            <ul>
+                <li>One-to-one relationship: a single LLM call can produce only one tool call.</li>
+                <li>Lack of standardization: wiring/integration must be done manually (not a scalable approach).</li>
+                <li>Difficulty accessing the right tool.</li>
+            </ul>
+
+            
+
+            <p>
+                The second rectangle represents the second layer of abstraction. It introduces the
+                notion of client&ndash;server communication: now tools are encapsulated in an MCP
+                server, so we no longer need to wire each tool to the LLM individually. We just make
+                sure it's compatible with the server, and we then have access to all the tools.
+            </p>
+
+            <p><strong>Pros</strong></p>
+            <ul>
+                <li>Scalability (from 1:1 to 1:N).</li>
+            </ul>
+
+            <p><strong>Cons</strong></p>
+            <ul>
+                <li>One-to-one relationship: a single LLM call can still produce only one tool call.</li>
+                <li>Context overflow: all tools are generally loaded into the system prompt, which narrows the context window and can lead the LLM to pick the wrong tool.</li>
+            </ul>
+
+
+            <p>
+                The third rectangle represents the third layer of abstraction. Here, MCP resources are
+                consumed in a better way (via a TypeScript API). This approach is known as
+                <em>Code Mode</em> and was introduced by Cloudflare in one of their
+                articles<sup><a href="#fn1">1</a></sup>. Code Mode adds the “planning capacity” to the
+                LLM, which means that the LLM will no longer generate a single “tool call” but rather
+                code that makes use of several tools &mdash; which means less latency, more context, and
+                better results.
+            </p>
+
+            <p><strong>Pros</strong></p>
+            <ul>
+                <li>Less latency: one LLM call can orchestrate several tools at once.</li>
+                <li>More context: only the relevant tools are pulled in, not all of them.</li>
+                <li>Better results: the LLM can plan and compose tool usage as code.</li>
+            </ul>
+
+            <!-- Footnotes & resources -->
+            <section class="footnotes">
+                <hr>
+                <ol>
+                    <li id="fn1">
+                        Cloudflare &mdash;
+                        <a href="https://blog.cloudflare.com/code-mode/" target="_blank" rel="noopener">Code Mode: a new way to write LLM tools</a>
+                    </li>
+                </ol>
+                <p style="font-style:italic;font-size:0.85rem;color:#999;">
+                    Postscript: this content is human-written but LLM-formatted.
+                </p>
+            </section>
+
+        </div>
+    </article>
+</main>
+
+</body>
+</html>

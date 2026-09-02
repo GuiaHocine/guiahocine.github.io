@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Hoc - My First Post</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Guia Hocine</h1>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../writing.html">Writing</a>
+    </nav>
+</header>
+
+<main>
+    <article class="post">
+        <h2 class="post-title">My First Post</h2>
+        <p class="post-date">2026-09-01</p>
+
+        <div class="post-content">
+            <p>
+                Hello! This is my first post on this site. I built a small
+                system so that I can keep adding writings without touching the
+                listing page manually — each post is just an HTML file, and the
+                <a href="../writing.html">Writing</a> page picks it up
+                automatically from a manifest file.
+            </p>
+
+            <h3>How it works</h3>
+
+            <p>
+                Everything is static. There are three pieces:
+            </p>
+
+            <ul>
+                <li><code>posts.js</code> — a list of all posts (title, date, file, links).</li>
+                <li><code>writing.html</code> — reads that list and renders it.</li>
+                <li><code>posts/&lt;slug&gt;.html</code> — one HTML file per post, like this one.</li>
+            </ul>
+
+            <p>
+                To publish a new post I just copy the template, write my content,
+                and add a single entry to <code>posts.js</code>. That's it.
+            </p>
+
+            <h3>A code example</h3>
+
+            <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("world"))</code></pre>
+
+            <h3>Conclusion</h3>
+
+            <p>
+                That's all for now. More to come — thanks for reading!
+            </p>
+        </div>
+    </article>
+</main>
+
+</body>
+</html>

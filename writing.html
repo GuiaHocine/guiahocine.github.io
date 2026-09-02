@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Hoc - Writing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Guia Hocine</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="writing.html">Writing</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Writing</h2>
+
+    <!-- This list is populated automatically from posts.js -->
+    <ul class="writing-list" id="writing-list"></ul>
+
+    <p id="no-posts" class="muted" hidden>No posts yet. Check back soon!</p>
+</main>
+
+<!-- Post manifest: add new posts in posts.js, not here -->
+<script src="posts.js"></script>
+<script>
+    (function () {
+        var list = document.getElementById("writing-list");
+        var empty = document.getElementById("no-posts");
+
+        if (typeof posts === "undefined" || posts.length === 0) {
+            if (empty) empty.hidden = false;
+            return;
+        }
+
+        list.innerHTML = posts.map(function (post) {
+            var links = (post.links || [])
+                .map(function (l) {
+                    return '[<a href="' + l.url + '">' + l.label + "</a>]";
+                })
+                .join(" ");
+
+            return (
+                '<li>' +
+                    '<span class="date">' + post.date + "</span>" +
+                    '<a href="' + post.file + '">' + post.title + "</a>" +
+                    (links ? " " + links : "") +
+                "</li>"
+            );
+        }).join("");
+    })();
+</script>
+
+</body>
+</html>
