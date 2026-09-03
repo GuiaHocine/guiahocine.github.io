@@ -17,7 +17,7 @@
 
 var posts = [
     {
-        date: "2026-09-01",
+        date: "2026-06-13",
         title: "From next token prediction to task solver",
         file: "posts/llm_to_agent.html",
     },
