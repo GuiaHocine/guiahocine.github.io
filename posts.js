@@ -16,15 +16,20 @@
 // ==========================================================================
 
 var posts = [
-    {
-        date: "2026-09-03",
-        title: "Incoming",
-        file: "posts/incoming.html",
-    },
+   
     {
         date: "2026-06-13",
         title: "From next token prediction to task solver",
         file: "posts/llm_to_agent.html",
+    },
+    {
+        date: "2025",
+        title: "CAST: A Context-Aware Spatio-Temporal Model for Human Mobility Forecasting",
+        file: "posts/cast-mobility.html",
+        links: [
+            { label: "HAL", url: "https://hal.science/hal-05620443" },
+            { label: "PDF", url: "https://hal.science/hal-05620443/file/CAST%21%20A%20Context-Aware%20Spatio-Temporal%20Model%20for%20Human%20Mobility%20Forecasting.pdf" },
+        ],
     },
     // Add more posts below, newest first:
     // {
